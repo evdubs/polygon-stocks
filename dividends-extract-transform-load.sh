@@ -9,4 +9,4 @@ racket -y ${dir}/dividends-transform-load.rkt -p "$1"
 
 7zr a /var/tmp/polygon/dividends/${current_year}.7z /var/tmp/polygon/dividends/${today}
 
-# racket -y ${dir}/dump-dolt-dividends.rkt -p "$1"
+racket -y ${dir}/dump-dolt-dividends.rkt -p "$1"
