@@ -13,8 +13,8 @@
          "list-partition.rkt")
 
 (define (download-splits symbols)
-  (make-directory* (string-append "/var/tmp/polygon/splits/" (end-date)))
-  (call-with-output-file* (string-append "/var/tmp/polygon/splits/" (end-date) "/"
+  (make-directory* (string-append "/var/local/polygon/splits/" (end-date)))
+  (call-with-output-file* (string-append "/var/local/polygon/splits/" (end-date) "/"
                                          (first symbols) "-" (last symbols) ".json")
     (λ (out)
       (with-handlers ([exn:fail?

@@ -10,7 +10,7 @@
          racket/string
          threading)
 
-(define base-folder (make-parameter "/var/tmp/polygon/ohlc"))
+(define base-folder (make-parameter "/var/local/polygon/ohlc"))
 
 (define file-date (make-parameter (today)))
 
@@ -24,7 +24,7 @@
  #:program "racket ohlc-transform-load.rkt"
  #:once-each
  [("-b" "--base-folder") folder
-                         "Polygon OHLC base folder. Defaults to /var/tmp/polygon/ohlc"
+                         "Polygon OHLC base folder. Defaults to /var/local/polygon/ohlc"
                          (base-folder folder)]
  [("-d" "--file-date") date
                          "Polygon OHLC folder date. Defaults to today"

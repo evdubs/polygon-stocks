@@ -14,8 +14,8 @@
          "list-partition.rkt")
 
 (define (download-dividends symbols)
-  (make-directory* (string-append "/var/tmp/polygon/dividends/" (end-date)))
-  (call-with-output-file* (string-append "/var/tmp/polygon/dividends/" (end-date) "/"
+  (make-directory* (string-append "/var/local/polygon/dividends/" (end-date)))
+  (call-with-output-file* (string-append "/var/local/polygon/dividends/" (end-date) "/"
                                          (first symbols) "-" (last symbols) ".json")
     (λ (out)
       (with-handlers ([exn:fail?

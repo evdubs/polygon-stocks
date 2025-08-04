@@ -24,7 +24,7 @@
        (displayln (string-append "Requested date " (date->iso8601 (extract-date)) " falls on a weekend. Terminating."))
        (exit)])
 
-(call-with-output-file* (string-append "/var/tmp/polygon/ohlc/" (~t (extract-date) "yyyy-MM-dd") ".json")
+(call-with-output-file* (string-append "/var/local/polygon/ohlc/" (~t (extract-date) "yyyy-MM-dd") ".json")
   (λ (out)
     (with-handlers ([exn:fail?
                      (λ (error)

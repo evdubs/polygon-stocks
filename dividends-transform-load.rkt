@@ -9,7 +9,7 @@
          racket/string
          threading)
 
-(define base-folder (make-parameter "/var/tmp/polygon/dividends"))
+(define base-folder (make-parameter "/var/local/polygon/dividends"))
 
 (define folder-date (make-parameter (today)))
 
@@ -23,7 +23,7 @@
  #:program "racket dividends-transform-load.rkt"
  #:once-each
  [("-b" "--base-folder") folder
-                         "Polygon Stocks dividends base folder. Defaults to /var/tmp/polygon/dividends"
+                         "Polygon Stocks dividends base folder. Defaults to /var/local/polygon/dividends"
                          (base-folder folder)]
  [("-d" "--folder-date") date
                          "Polygon Stocks dividends folder date. Defaults to today"
