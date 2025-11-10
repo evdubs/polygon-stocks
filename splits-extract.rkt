@@ -21,7 +21,7 @@
                        (λ (error)
                          (displayln (string-append "Encountered error for " (first symbols) "-" (last symbols)))
                          (displayln error))])
-        (~> (string-append "https://api.polygon.io/v3/reference/splits?limit=1000&sort=execution_date"
+        (~> (string-append "https://api.massive.com/v3/reference/splits?limit=1000&sort=execution_date"
                            "&apiKey=" (api-key)
                            "&execution_date.gte=" (start-date)
                            "&execution_date.lte=" (end-date)

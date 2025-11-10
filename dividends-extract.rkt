@@ -22,7 +22,7 @@
                        (λ (error)
                          (displayln (string-append "Encountered error for " (first symbols) "-" (last symbols)))
                          (displayln error))])
-        (define body-js (~> (string-append "https://api.polygon.io/v3/reference/dividends?limit=1000&sort=ex_dividend_date"
+        (define body-js (~> (string-append "https://api.massive.com/v3/reference/dividends?limit=1000&sort=ex_dividend_date"
                                         "&apiKey=" (api-key)
                                         "&ex_dividend_date.gte=" (start-date)
                                         "&ex_dividend_date.lte=" (end-date)
