@@ -22,7 +22,7 @@
                        (λ (error)
                          (displayln (string-append "Encountered error for " (first symbols) "-" (last symbols)))
                          (displayln error))])
-        (define body-js (~> (string-append "https://api.massive.com/v3/reference/dividends?limit=1000&sort=ex_dividend_date"
+        (define body-js (~> (string-append "https://api.massive.com/stocks/v1/dividends?limit=1000&sort=ex_dividend_date"
                                         "&apiKey=" (api-key)
                                         "&ex_dividend_date.gte=" (start-date)
                                         "&ex_dividend_date.lte=" (end-date)
@@ -82,7 +82,7 @@
                      "Database password"
                      (db-pass password)]
  [("-s" "--start-date") date
-                        "Start date of range. Defaults to 3 months ago"
+                        "Start date of range. Defaults to 1 month ago"
                         (start-date date)]
  [("-u" "--db-user") user
                      "Database user name. Defaults to 'user'"
