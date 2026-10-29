@@ -115,7 +115,10 @@ on conflict (act_symbol, ex_date) do nothing;
                                               (hash-ref dividend-hash 'pay_date)
                                               "")
                                           (real->decimal-string (hash-ref dividend-hash 'cash_amount) 6)
-                                          (hash-ref dividend-hash 'dividend_type)
+                                          (cond [(hash-has-key? dividend-hash 'dividend_type)
+                                                 (hash-ref dividend-hash 'dividend_type)]
+                                                [(hash-has-key? dividend-hash 'distribution_type)
+                                                 (hash-ref dividend-hash 'distribution_type)])
                                           (number->string (hash-ref dividend-hash 'frequency))))
                           _))
             (commit-transaction dbc)))))))
